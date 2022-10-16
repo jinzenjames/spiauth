@@ -10,7 +10,16 @@
   ],
   "users": [
     {
-      
+      "firstname": "sedrtf",
+      "lastname": "rftgyh",
+      "email": "gfhjkl",
+      "password": "cvhbjnkm",
+      "id": 1
+    },
+    {
+      "email": "hello",
+      "password": "fghjk",
+      "id": 2
     }
   ]
 }

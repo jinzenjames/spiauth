@@ -24,5 +24,5 @@ signup(){
   this.http.post<any>('http://localhost:3000/users',this.signupForm.value).subscribe(res=>{
     alert("hi")
   })
-}
+} 
 }

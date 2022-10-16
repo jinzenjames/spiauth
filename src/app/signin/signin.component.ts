@@ -9,10 +9,31 @@ import { Router } from '@angular/router';
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent implements OnInit {
-  constructor() { }
+
+  loginForm!: FormGroup
+  constructor(private formbuilder: FormBuilder, private http: HttpClient, private r: Router) { }
+
 
   ngOnInit(): void {
-    
+    this.loginForm = this.formbuilder.group(
+
+      {
+        email: [''], password: ['']
+      }
+    )
+  }
+  login() {
+    this.http.get<any>('http://localhost:3000/users').subscribe(res => {
+      const user = res.find((a: any) => {
+        return a.username == this.loginForm.value.username && a.password == this.loginForm.value.password
+      })
+      if (user) {
+        alert("User Exist");
+        this.loginForm.reset()
+       
+      }
+
+    })
   }
 
 }
